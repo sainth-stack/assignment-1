@@ -1,0 +1,120 @@
+body {
+  color: #333;
+}
+.login,
+.image {
+  min-height: 100vh;
+}
+
+.bg-image {
+  background-size: cover;
+  background-position: flex;
+  background-color: rgb(74, 74, 171);
+  max-width: 100vw;
+  width: 100vw;
+  max-height: 100vh;
+  height: 100vh;
+}
+
+.login-heading {
+  font-weight: bold;
+}
+
+.login-h2 {
+  font-family: Inter;
+  font-style: small;
+  font-weight: small;
+  display: flex;
+  align-items: center;
+  font-size: small;
+  color: black;
+}
+
+.contain {
+  background-color: white;
+  width: 50%;
+  height: 100%;
+  /* margin-left: 20%; */
+  /* margin-bottom: 35%; */
+}
+
+.checkinput {
+  margin-right: 5px;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+
+.login-contain {
+  color: #00a5b6;
+  text-align: center;
+  font-size: large;
+  font-style: normal;
+}
+
+.btn-login {
+  font-size: 0.9rem;
+  letter-spacing: 0.05rem;
+  padding: 0.75rem 1rem;
+  width: 380px;
+  height: 50px;
+  left: 855px;
+  top: 689px;
+}
+
+.form-label-group {
+  position: relative;
+  margin-bottom: 1rem;
+}
+
+/*.logo{
+  text-align: center;
+  padding: 10%;
+  padding-top: 1%;
+}*/
+.logo {
+  background-image: url("../assets/svg/NG_logo.png");
+  background-repeat: no-repeat;
+  text-align: center;
+  padding: 10%;
+  background-size: 100%;
+  background-origin: content-box;
+  background-position: center;
+}
+
+.form-label-group > input,
+.form-label-group > label {
+  padding: var(--input-padding-y) var(--input-padding-x);
+  height: auto;
+  border-radius: 2rem;
+}
+
+.form-label-group > label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 100%;
+  margin-bottom: 0;
+  /* Override default `<label>` margin */
+  line-height: 1.5;
+  color: #495057;
+  cursor: text;
+  /* Match the input under the label */
+  border: 1px solid transparent;
+  border-radius: 0.25rem;
+  transition: all 0.1s ease-in-out;
+}
+
+@media only screen and (max-width: 600px) {
+  .container {
+    width: 100% !important;
+  }
+}
+.googlebuttoon{
+  width: 310px;
+  text-align: center;
+}
+.error-message2{
+  color:red;
+}

@@ -1,0 +1,80 @@
+@import "./default/default.scss";
+@import "./default/utility.scss";
+@import "./vendors/vendors-dir.scss";
+@import "./auth/login.scss";
+@import "./icons/style.css";
+@import "./common.scss";
+
+@font-face {
+  font-family: Gilroy;
+  src: url(../fonts/gilroy/Gilroy-Regular.ttf);
+}
+
+@font-face {
+  font-family: Gilroy-regular;
+  src: url(../fonts/gilroy/Gilroy-Regular.ttf);
+}
+
+@font-face {
+  font-family: Gilroy-heavy;
+  src: url(../fonts/gilroy/Gilroy-Heavy.ttf);
+}
+
+@font-face {
+  font-family: Gilroy-Medium;
+  src: url(../fonts/gilroy/Gilroy-Medium.ttf);
+}
+
+@font-face {
+  font-family: Gilroy-Bold;
+  src: url(../fonts/gilroy/Gilroy-Bold.ttf);
+}
+
+@font-face {
+  font-family: Montserrat;
+  src: url(../fonts/Montserrat/Montserrat-Regular.ttf);
+}
+
+@font-face {
+  font-family: Montserrat-regular;
+  src: url(../fonts/Montserrat/Montserrat-Regular.ttf);
+}
+
+@font-face {
+  font-family: Montserrat-heavy;
+  src: url(../fonts/Montserrat/Montserrat-Bold.ttf);
+}
+
+@font-face {
+  font-family: Montserrat-Medium;
+  src: url(../fonts/Montserrat/Montserrat-Medium.ttf);
+}
+
+@font-face {
+  font-family: Montserrat-Bold;
+  src: url(../fonts/Montserrat/Montserrat-Bold.ttf);
+}
+
+.font-Gilroy-Medium {
+  font-family: Gilroy-Medium;
+}
+
+.font-Gilroy-Bold {
+  font-family: Gilroy-Bold;
+}
+
+.font-Montserrat {
+  font-family: Montserrat !important;
+}
+
+.font-Montserrat-Medium {
+  font-family: Montserrat-Medium;
+}
+
+.font-Montserrat-Bold {
+  font-family: Montserrat-Bold;
+}
+
+.srv-validation-message {
+  color: tomato;
+}
