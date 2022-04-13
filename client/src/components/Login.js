@@ -29,7 +29,7 @@ axios.post('http://localhost:5000/login',data).then(
     }
 
     if(token){
-        return <Navigate to='/myprofile'/>
+        return <Navigate to='/planjourney'/>
     }
    
 

@@ -5,6 +5,8 @@ const router = express.Router();
 const middleware = require("../middleware");
 const jwt = require("jsonwebtoken");
 const UserData = require("../models/usersModel");
+const ReserveData = require("../models/reserveModal");
+const req = require("express/lib/request");
 router.post("/register", async (req, res) => {
   console.log(req.body);
   try {
@@ -64,6 +66,7 @@ router.post("/login", async (req, res) => {
 router.get("/myprofile", middleware, async (req, res) => {
   try {
     let exist = await UserData.findById(req.user.id);
+    console.log(req.user)
     if (!exist) {
       return res.status(400).send("User not found");
     }
@@ -74,4 +77,19 @@ router.get("/myprofile", middleware, async (req, res) => {
   }
 });
 
+router.post("/reserveTrain", async (req,res) => {
+  try {
+    console.log(req.body)
+    const {name,train_num} = req.body
+    let trainData = new ReserveData({
+      trainName: name,
+      trainNum: train_num
+    });
+    await trainData.save();
+    res.status(200).send("Reserved Successfully");
+  } catch(err) {
+    console.log(err);
+    return res.status(500).send("Not reserved");
+  }
+})
 module.exports = router;

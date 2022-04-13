@@ -19,7 +19,7 @@ function App() {
             <Route path="/" element={<Login />} />
             <Route path="/register" element={<Register />} />
             <Route path="/login" element={<Login />} />
-            <Route path="/myprofile" element={<Myprofile />} />
+            <Route path="/planjourney" element={<Myprofile />} />
           </Routes>
         </BrowserRouter>
       </store.Provider>
