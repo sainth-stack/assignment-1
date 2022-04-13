@@ -6,6 +6,7 @@ import Register from "./components/Register";
 import Login from "./components/Login";
 import Myprofile from "./components/Myprofile";
 import Nav from "./components/Nav";
+import Dashboard from "./components/Dashboard";
 
 export const store = createContext();
 
@@ -16,10 +17,12 @@ function App() {
       <store.Provider value={[token, setToken]}>
         <BrowserRouter>
           <Routes>
-            <Route path="/" element={<Login />} />
+            <Route path="/" element={<Myprofile />} />
             <Route path="/register" element={<Register />} />
             <Route path="/login" element={<Login />} />
             <Route path="/myprofile" element={<Myprofile />} />
+            <Route path="/dashboard" element={<Dashboard />} />
+
           </Routes>
         </BrowserRouter>
       </store.Provider>

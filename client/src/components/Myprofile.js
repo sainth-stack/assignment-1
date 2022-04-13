@@ -4,7 +4,6 @@ import { Navigate } from "react-router";
 
 import { store } from '../App'
 const Myprofile=()=>{
-    const [token,setToken]=useContext(store)
     const [data,setData]=useState(null)
 
     useEffect(()=>{
@@ -17,6 +16,8 @@ const Myprofile=()=>{
             setData(res.data)
         })
     },[])
+    const token=localStorage.getItem("token");
+    console.log(token)
     if(!token){
         return <Navigate to='/login'/>
     }
@@ -24,7 +25,7 @@ const Myprofile=()=>{
 
       <div>
           
-        hello {data.username}
+        hello 
 
         <button>Logout</button><br/>
           
