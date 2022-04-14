@@ -3,6 +3,8 @@ import react, { useContext, useState, useEffect } from "react";
 import { Navigate } from "react-router";
 import "./styles.css";
 import "../index.css";
+import Sidebar from "./Sidebar";
+
 import { store } from "../App";
 const Myprofile = () => {
   const [data, setData] = useState(null);
@@ -10,6 +12,7 @@ const Myprofile = () => {
   const [trainData, setTrainData] = useState([]);
   const [loading, setLoading] = useState(false);
   const [reserveTrain, setReserveTrain] = useState([]);
+  const token = localStorage.getItem("token");
   useEffect(() => {
     axios
       .get("http://localhost:5000/myprofile", {
@@ -21,8 +24,7 @@ const Myprofile = () => {
         console.log(res.data);
         setData(res.data);
       });
-  }, []);
-  const token = localStorage.getItem("token");
+  },[token]);
   console.log(token);
   if (!token) {
     return <Navigate to="/login" />;
@@ -41,7 +43,7 @@ const Myprofile = () => {
         "X-RapidAPI-Host": "trains.p.rapidapi.com",
         "X-RapidAPI-Key": "15d8150095msha01d1a59180d0d1p1f0469jsn5c97956e9d26",
       },
-      data: '{"search":"' + destination + '"}',
+      data: '{"search":"' + destination+ '"}',
     };
 
     axios
@@ -76,6 +78,8 @@ const Myprofile = () => {
   // }
   return (
     <div>
+            <Sidebar />
+
       <div className="row d-flex justify-content-between">
         <div className="parent col-sm-10 col-md-5">
           <form className="">
