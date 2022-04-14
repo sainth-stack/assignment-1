@@ -5,6 +5,7 @@ const router = express.Router();
 const middleware = require("../middleware");
 const jwt = require("jsonwebtoken");
 const UserData = require("../models/usersModel");
+const TotalData = require("../models/reserveModal")
 const ReserveData = require("../models/reserveModal");
 const req = require("express/lib/request");
 router.post("/register", async (req, res) => {
@@ -92,4 +93,45 @@ router.post("/reserveTrain", async (req,res) => {
     return res.status(500).send("Not reserved");
   }
 })
+router.get("/getdata", async (req, res) => {
+  try {
+    let data = await TotalData.find();
+    return res.status(200).send(data)
+  } catch (err) {
+    console.log(err);
+    return res.status(500).send("Server Error");
+  }
+});
+router.delete("/deletedata/:_id", async (req, res) => {
+  console.log(req.params)
+  TotalData.findByIdAndRemove({ _id: req.params._id }, (err) => {
+    if (!err) {
+      res.status(200).send(
+       "Reservation Deleted Successfully"
+      );
+    } else {
+      res.status(500).send(
+       "not deleted"
+      );
+    }
+  });
+});
+
+const deleteTask = (req, res) => {
+  TasksModel.findByIdAndRemove({ _id: req.params.id }, (err) => {
+    if (!err) {
+      res.status(200).send(
+        successResponse({
+          message: "Task Deleted Successfully!",
+        })
+      );
+    } else {
+      res.status(500).send(
+        failResponse({
+          message: err ? err.message : "Task Not Deleted!",
+        })
+      );
+    }
+  });
+};
 module.exports = router;

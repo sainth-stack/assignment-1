@@ -20,13 +20,10 @@ function App() {
             <Route path="/" element={<Myprofile />} />
             <Route path="/register" element={<Register />} />
             <Route path="/login" element={<Login />} />
-<<<<<<< HEAD
-            <Route path="/myprofile" element={<Myprofile />} />
+            <Route path="/planjourney" element={<Myprofile />} />
             <Route path="/dashboard" element={<Dashboard />} />
 
-=======
-            <Route path="/planjourney" element={<Myprofile />} />
->>>>>>> 0864b39a95e4d318ff29119d00b2b9e8a1c7acc7
+
           </Routes>
         </BrowserRouter>
       </store.Provider>
