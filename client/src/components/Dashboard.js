@@ -1,9 +1,9 @@
 import moment from "moment";
 import React, { useEffect, useState, useMemo } from "react";
-import { Bar } from "react-chartjs-2";
 import axios from "axios";
 import paginationFactory from "react-bootstrap-table2-paginator";
 import AllOrders from './AllOrders/index'
+import Sidebar from "./Sidebar";
 export const productsGenerator = (products, quantity) => {
   const items = [];
   for (let i = 0; i < quantity; i++) {
@@ -54,16 +54,17 @@ export default function Dashboard() {
         setProducts(products);
   })
 }
-  // const handleEdit = (cellContent) => {
-  //   const updateOb = {
-  //     userid: cellContent.userId,
-  //     username: cellContent.name,
-  //     useremail: cellContent.useremail,
-  //     accountStatus: cellContent.accountStatus,
-  //   };
-  //   setUpdateObj(updateOb);
-  //   return updateOb;
-  // };
+  const handleEdit = (cellContent) => {
+    const updateOb = {
+      userid: cellContent.userId,
+      username: cellContent.name,
+      useremail: cellContent.useremail,
+      accountStatus: cellContent.accountStatus,
+    };
+    setUpdateObj(updateOb);
+    return updateOb;
+  };
+  
   const columns = [
     {
       dataField: "id",
@@ -101,6 +102,8 @@ export default function Dashboard() {
 
   return (
     <div>
+                  <Sidebar />
+
       <div className="d-flex bg-primary rounded text-white align-items-center flex-wrap">
         <h1 className="container-fluid col-lg-9 col-md-12 col-sm-12 col-xs-12 m-0">
           Dashboard{" "}

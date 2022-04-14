@@ -29,6 +29,7 @@ axios.post('http://localhost:5000/login',data).then(
     }
 
     if(token){
+      localStorage.setItem('token', token);
         return <Navigate to='/planjourney'/>
     }
    
